@@ -3,7 +3,6 @@
 body {
 	font-family: 'Gaegu', sans-serif;
 	text-align: center;
-	background-color: rgb(158, 153, 221);
 	margin: 0;
 	padding: 0;
 	display: flex;
@@ -11,31 +10,45 @@ body {
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
-	background-image: url('images/Screenshot 2025-03-19 141436.png'); 
-	background-size: cover; 
+	/* Background image */
+	background-image: url('images/Screenshot-2025-03-19-141436.png'); /* Ensure correct path */
+	background-size: cover;
 	background-position: center;
-	background-repeat: no-repeat; 
+	background-repeat: no-repeat;
+	background-attachment: fixed; /* Ensures background remains fixed */
 }
 
 h1 {
 	color: white;
 	margin-bottom: 20px;
-	
 }
 
+/* Logo styling */
+.logo {
+	width: 150px; /* Adjust as needed */
+	border-radius: 10px;
+	margin-bottom: 20px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* General image styles */
 img {
 	border-radius: 10px;
 	margin-bottom: 20px;
+	max-width: 100%;
+	height: auto;
 }
 
+/* Button styling */
 .button {
 	background-color: white;
 	border: none;
-	padding: 10px 20px;
+	padding: 12px 25px;
 	margin: 10px;
 	font-size: 16px;
 	cursor: pointer;
 	border-radius: 5px;
+	transition: all 0.3s ease;
 }
 
 .button a {
@@ -46,11 +59,13 @@ img {
 
 .button:hover {
 	background-color: lightgray;
+	transform: scale(1.05); /* Subtle hover effect */
 }
 
+/* Disclaimer */
 .disclaimer {
 	margin-top: 20px;
 	font-size: 12px;
 	color: white;
+	opacity: 0.8;
 }
-
