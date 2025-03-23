@@ -41,7 +41,7 @@ img {
 
 /* Button styling */
 .button {
-    background-color: white;
+    background-color: rgb(165, 186, 255);
     border: none;
     padding: 12px 25px;
     margin: 10px;
@@ -63,7 +63,7 @@ img {
     background-color: lightgray;
     transform: scale(1.1); /* Make the button slightly bigger */
     padding: 14px 28px; /* Adjust padding as the button grows */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Optional: Increase shadow for emphasis */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow for emphasis */
 }
 
 .button:active {
