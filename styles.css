@@ -10,8 +10,8 @@ body {
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
-	/* Background image */
-	background-image: url('images/Screenshot 2025-03-19 141436.png'); /* Ensure correct path */
+
+	background-image: url('images/Screenshot%202025-03-19%20141436.png');/* Ensure correct path */
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -41,25 +41,33 @@ img {
 
 /* Button styling */
 .button {
-	background-color: white;
-	border: none;
-	padding: 12px 25px;
-	margin: 10px;
-	font-size: 16px;
-	cursor: pointer;
-	border-radius: 5px;
-	transition: all 0.3s ease;
+    background-color: white;
+    border: none;
+    padding: 12px 25px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative; /* Ensure the scaling effect doesn't affect layout */
+    z-index: 1; /* Ensure it's on top of other elements */
 }
 
 .button a {
-	text-decoration: none;
-	color: black;
-	font-weight: bold;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
 
 .button:hover {
-	background-color: lightgray;
-	transform: scale(1.05); /* Subtle hover effect */
+    background-color: lightgray;
+    transform: scale(1.1); /* Make the button slightly bigger */
+    padding: 14px 28px; /* Adjust padding as the button grows */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Optional: Increase shadow for emphasis */
+}
+
+.button:active {
+    transform: scale(1.05); /* Slightly reduce size on click */
 }
 
 /* Disclaimer */
