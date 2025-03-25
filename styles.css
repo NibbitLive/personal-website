@@ -60,7 +60,7 @@ img {
 }
 
 .button:hover {
-    background-color: lightgray;
+    background-color: rgb(136, 154, 216);
     transform: scale(1.1); /* Make the button slightly bigger */
     padding: 14px 28px; /* Adjust padding as the button grows */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow for emphasis */
