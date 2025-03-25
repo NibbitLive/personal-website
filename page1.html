@@ -5,13 +5,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>How To Make A Paper Airplane</title>
 	<link rel="stylesheet" href="styles.css">
+	<style>
+		/* Style for Scroll to Bottom Button */
+		.scrollToBottom {
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			background-color: #008CBA;
+			color: white;
+			text-decoration: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		.scrollToBottom:hover {
+			background-color: #005f73;
+		}
+	</style>
 </head>
 <body>
 	<h1>How To Make A Paper Airplane</h1>
 
-	<a href="#bottom" class="scrollToBottom">Scroll to Bottom</a>
-	<div id="bottom"></div>
-	
 	<div class="step">
 		<h2>Step 1: Use a standard A4 or letter-sized sheet of paper.</h2>
 		<img src="images/Step1.png" alt="A4 paper ready for folding">
@@ -23,7 +40,7 @@
 	</div>
 
 	<div class="step">
-		<h2>Step 3: Crease the fold well, then unfold to return to the original position. </h2>
+		<h2>Step 3: Crease the fold well, then unfold to return to the original position.</h2>
 		<img src="images/Step3.png" alt="Folding top corners to center">
 	</div>
 
@@ -79,6 +96,10 @@
 	</div>
 	
 	<a href="index.html">Go back to homepage</a>
+
+	<!-- Scroll to Bottom Button -->
+	<a href="#bottom" class="scrollToBottom">Scroll to Bottom</a>
+	<div id="bottom"></div>
+
 </body>
 </html>
-
