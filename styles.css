@@ -77,3 +77,21 @@ img {
 	color: white;
 	opacity: 0.8;
 }
+
+.scrollToBottom {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #008CBA;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.scrollToBottom:hover {
+    background-color: #005f73;
+}
