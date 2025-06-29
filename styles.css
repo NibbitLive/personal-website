@@ -281,20 +281,6 @@ header {
     flex-shrink: 0;
 }
 
-.new-messages-ping {
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #28a745;
-    color: white;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    z-index: 9999;
-    animation: fadeIn 1s ease-out;
-}
 
 @keyframes fadeIn {
     from { opacity: 0; }

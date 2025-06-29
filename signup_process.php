@@ -19,7 +19,6 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-	// Username already exists
 	loginRedirectWithError($username, $password);
 } else {
 	// Optional: Hash the password for security
@@ -36,12 +35,51 @@ if ($result->num_rows > 0) {
 	$stmt->bind_param('ss', $username, $hashed_password);
 	$stmt->execute();
 
+	// Get all usernames
+	$usernames = [];
+	$query = "SELECT username FROM users";
+	$result = $conn->query($query);
+
+	if ($result) {
+		while ($row = $result->fetch_assoc()) {
+			$usernames[] = $row['username'];
+		}
+
+		// Sort the usernames using Quick Sort
+		$sorted_usernames = quickSort($usernames);
+
+		// Optional: Log or debug
+		// file_put_contents('sorted_usernames.log', implode("\n", $sorted_usernames));
+	}
+
 	// Log the user in
 	$_SESSION['username'] = $username;
 	header("Location: index.php"); // Redirect to homepage or chat
 	exit();
 }
 
+// Quick Sort function in PHP
+function quickSort($array) {
+	if (count($array) <= 1) {
+		return $array;
+	}
+
+	$pivot = $array[count($array) - 1];
+	$left = [];
+	$right = [];
+
+	for ($i = 0; $i < count($array) - 1; $i++) {
+		if ($array[$i] <= $pivot) {
+			$left[] = $array[$i];
+		} else {
+			$right[] = $array[$i];
+		}
+	}
+
+	return array_merge(quickSort($left), [$pivot], quickSort($right));
+}
+
+// Redirect function if username exists
 function loginRedirectWithError($username, $password) {
 	echo '
 		<form id="redirectForm" action="signup.php?error=1" method="post">

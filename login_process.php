@@ -28,7 +28,21 @@ if ($result->num_rows > 0) {
 
 	// Verify the password hash
 	if (password_verify($password, $user['password'])) {
-		// Password correct — log user in
+		// ✅ Fetch all usernames
+		$usernames = [];
+		$user_query = "SELECT username FROM users";
+		$user_result = $conn->query($user_query);
+
+		if ($user_result) {
+			while ($row = $user_result->fetch_assoc()) {
+				$usernames[] = $row['username'];
+			}
+
+			// ✅ Perform Linear Search
+			$position = linearSearch($usernames, $username);
+		}
+
+		// Log user in
 		$_SESSION['username'] = $username;
 		header("Location: index.php");
 		exit;
@@ -41,6 +55,17 @@ if ($result->num_rows > 0) {
 	loginRedirectWithError($username, $password);
 }
 
+// 🔍 Linear Search Function
+function linearSearch($array, $target) {
+	for ($i = 0; $i < count($array); $i++) {
+		if ($array[$i] === $target) {
+			return $i; // Position found
+		}
+	}
+	return -1; // Not found
+}
+
+// Error redirect function
 function loginRedirectWithError($username, $password) {
 	echo '
 		<form id="redirectForm" action="login.php?error=1" method="post">
